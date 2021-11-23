@@ -1,7 +1,10 @@
-import Head from 'next/head'
+import { Flex } from '@chakra-ui/react';
+
 
 export default function Home() {
   return (
-    <h1>Dashboard</h1>
-  )
+    <Flex>
+      <h1>Hello</h1>
+    </Flex>
+  );
 }
