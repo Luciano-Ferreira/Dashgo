@@ -4,9 +4,8 @@
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
+        "airbnb",
         "plugin:react/jsx-runtime"
     ],
     "parser": "@typescript-eslint/parser",
@@ -22,21 +21,23 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
+        "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx", ".js"] }],
+        "react/function-component-definition": [1, {
+            "namedComponents": "function-declaration",
+            "unnamedComponents": "function-expression"
+          }],
+          "import/prefer-default-export": "off",
+          "react/require-default-props": "off",
+          "react/jsx-props-no-spreading": "off"
+    },
+    "import/extensions": [
+        
+        {
+          "ignorePackages": true,
+          "pattern": {
+            "extension": "never"
+          }
+        }
+      ],
+    "import/no-unresolved": "off"
 }
