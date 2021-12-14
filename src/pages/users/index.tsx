@@ -3,6 +3,7 @@ import { Pagination } from '../../components/Pagination';
 import { RiAddLine, RiPencilLine } from 'react-icons/ri';
 import { Header } from '../../components/Header';
 import { Sidebar } from '../../components/Sidebar';
+import { DefaultButton } from '../../components/DefaultButton';
 
 export default function UserList() {
   return (
@@ -19,6 +20,12 @@ export default function UserList() {
           p='8'>
           <Flex mb='8' justify='space-between' align='center'>
             <Heading size='lg' fontWeight='normal'>Usuários</Heading>
+            <DefaultButton
+              leftIconName={RiAddLine}
+              bkColor='green.500'
+            >
+              Criar novo
+            </DefaultButton>
             <Button as='a' size='sm' fontSize='sm' colorScheme='green' leftIcon={<Icon as={RiAddLine} fontSize='20'></Icon>}>
               Criar novo
             </Button>

@@ -1,4 +1,4 @@
-import { Flex, SimpleGrid, Box, Text, theme } from '@chakra-ui/react';
+import { Flex, SimpleGrid, Box, Text, theme, useColorModeValue } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import { Header } from '../components/Header';
 import { Sidebar } from '../components/Sidebar';
@@ -71,7 +71,7 @@ export default function Dashboard() {
         <SimpleGrid  flex='1' gap='4' minChildWidth='320px' align='flex-start'>
           <Box
             p='8'
-            bg='gray.800'
+            bg={useColorModeValue('gray.800', 'purple.150')}
             borderRadius={8}
             pb='4'
           >
@@ -80,7 +80,7 @@ export default function Dashboard() {
           </Box>
           <Box
             p='8'
-            bg='gray.800'
+            bg={useColorModeValue('gray.800', 'purple.150')}
             borderRadius={8}
             pb='4'
           >
