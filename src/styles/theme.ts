@@ -32,8 +32,15 @@ export const theme = extendTheme({
       '100': '#D1D2DC',
       '50': '#EEEEF2',
     },
+
     purple: {
       '150': '#faf5fc',
+    },
+
+    brown: {
+      '900': '#6B46C1',
+      '500': '#805AD5',
+      '200': '#9F7AEA'
     }
   },
   fonts: {
