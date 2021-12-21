@@ -1,6 +1,7 @@
 import Link, { LinkProps } from 'next/link';
 import { useRouter } from 'next/router';
 import { cloneElement, ReactElement } from 'react'
+import { useColorModeValue } from '@chakra-ui/react';
 
 
 interface ActiveLinkProps extends LinkProps{
@@ -32,7 +33,7 @@ export function ActiveLink({
       {...rest}
     >
       {cloneElement(children, {
-        color: isActive ? 'pink.400' : 'gray.50'
+        color: isActive ? 'pink.400' : useColorModeValue('gray.50', 'gray.800')
       })}
     </Link>
   )
