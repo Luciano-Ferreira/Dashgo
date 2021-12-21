@@ -3,14 +3,22 @@ import { Input } from '../components/Form/Input';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ThemeButton } from '../components/ThemeButton';
 
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+
 type SignInFormData = {
   email: string;
   password: string;
 }
 
+const signInFormSchema = yup.object().shape({
+  email: yup.string().required('E-mail is required *').email('E-mail must be a valid email'),
+  password: yup.string().required('Password is required *'),
+})
+
 export default function SignIn() {
   const { register, handleSubmit, formState } = useForm({
-    // resolver: yupResolver()
+    resolver: yupResolver(signInFormSchema)
   })
 
   const { errors } = formState
@@ -18,7 +26,6 @@ export default function SignIn() {
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
     await new Promise(resolve => setTimeout(resolve, 2000));
     
-
     console.log(values)
   }
 
@@ -53,14 +60,14 @@ export default function SignIn() {
             type='email'
             error={errors.email}
             label='E-mail'
-            {...register('email', { required: 'E-mail required' })}
+            {...register('email')}
           />
           <Input
             name='password'
             type='password'
             error={errors.password}
             label='Password'
-            {...register('password', { required: 'Password required' })}
+            {...register('password')}
           />
         </Stack>
         <Button
