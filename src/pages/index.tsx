@@ -13,13 +13,15 @@ export default function SignIn() {
     // resolver: yupResolver()
   })
 
+  const { errors } = formState
+  
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
     await new Promise(resolve => setTimeout(resolve, 2000));
+    
 
     console.log(values)
   }
 
-  const { errors } = formState
 
   return (
     <Flex
@@ -49,23 +51,27 @@ export default function SignIn() {
           <Input
             name='email'
             type='email'
+            error={errors.email}
             label='E-mail'
-            {...register('email')}
+            {...register('email', { required: 'E-mail required' })}
           />
           <Input
             name='password'
             type='password'
+            error={errors.password}
             label='Password'
-            {...register('password')}
+            {...register('password', { required: 'Password required' })}
           />
-          <Button
+        </Stack>
+        <Button
             type='submit'
             mt='6'
             colorScheme='pink'
             size='lg'
             isLoading={formState.isSubmitting}
-          >Entrar</Button>
-        </Stack>
+          >
+            Entrar
+          </Button>
       </Flex>
     </Flex>
   );
