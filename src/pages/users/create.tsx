@@ -62,7 +62,7 @@ export default function CreateUser() {
           onSubmit={handleSubmit(handleCreateUser)}
         >
           <Heading size='lg' fontWeight='normal'>Criar usuário</Heading>
-          <Divider my='6' borderColor='gray.700' />
+          <Divider my='6' borderColor={useColorModeValue('gray.700','gray.50')} />
           <VStack spacing='8'>
             <SimpleGrid minChildWidth='240px' spacing={['6', '8']} w='100%'>
               <Input
