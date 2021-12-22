@@ -1,3 +1,4 @@
+import { HStack } from '@chakra-ui/react';
 import { forwardRef, ForwardRefRenderFunction } from 'react';
 import { FieldError } from 'react-hook-form';
 import {
@@ -18,34 +19,36 @@ interface InputProps extends ChakraInputProps {
   error?: FieldError;
 }
 
-const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = 
-({ name, label, error = null, ...rest }, ref) => {
-  const { colorMode } = useColorMode();
+const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> =
+  ({ name, label, error = null, ...rest }, ref) => {
+    const { colorMode } = useColorMode();
 
-  return (
-    <FormControl isInvalid={!!error}>
-      {!!label && <FormLabel id={label} htmlFor={name}>{label}</FormLabel>}
-      {!!error && (
-        <FormErrorMessage>
-          {error.message}
-        </FormErrorMessage>
-      )}
-      <ChakraInput
-        name={name}
-        id={name}
-        type='email'
-        focusBorderColor='pink.500'
-        bgColor={useColorModeValue('gray.900', 'gray.100')}
-        variant='filled'
-        _hover={colorMode === 'dark' ? { bgColor: 'gray.300' } : { bgColor: 'gray.900' }}
-        _focus={colorMode === 'dark' ? { bgColor: 'gray.300' } : { bgColor: 'gray.900' }}
-        size='lg'
-        ref={ref}
-        {...rest}
-      />
+    return (
+      <FormControl isInvalid={!!error}>
+        <HStack justify='space-between'>
+          {!!label && <FormLabel id={label} htmlFor={name}>{label}</FormLabel>}
+          {!!error && (
+            <FormErrorMessage>
+              {error.message}
+            </FormErrorMessage>
+          )}
+        </HStack>
 
-    </FormControl>
-  );
-}
+        <ChakraInput
+          name={name}
+          id={name}
+          focusBorderColor='pink.500'
+          bgColor={useColorModeValue('gray.900', 'gray.100')}
+          variant='filled'
+          _hover={colorMode === 'dark' ? { bgColor: 'gray.300' } : { bgColor: 'gray.900' }}
+          _focus={colorMode === 'dark' ? { bgColor: 'gray.300' } : { bgColor: 'gray.900' }}
+          size='lg'
+          ref={ref}
+          {...rest}
+        />
+
+      </FormControl>
+    );
+  }
 
 export const Input = forwardRef(InputBase)
