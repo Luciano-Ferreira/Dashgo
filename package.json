@@ -16,6 +16,7 @@
     "@hookform/resolvers": "^2.8.5",
     "@types/faker": "^5.5.9",
     "apexcharts": "^3.30.0",
+    "axios": "^0.24.0",
     "eslint-config-airbnb": "^19.0.1",
     "faker": "^5.5.3",
     "framer-motion": "^5.3.1",

@@ -33,10 +33,10 @@ export function Item({
       fontSize='xs'
       width='4'
       color={useColorModeValue('whiteAlpha','gray.300')}
-      bgColor={useColorModeValue('gray.700', 'gray.100')}
-      _hover={{
+      bgColor={useColorModeValue('gray.700', 'gray.50')}
+      _hover={useColorModeValue({
         bg: 'gray.500'
-      }}
+      }, {bg: 'gray.100'})}
     >
       {number}
     </Button>
