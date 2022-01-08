@@ -1,4 +1,4 @@
-import { Button } from '@chakra-ui/react';
+import { Button, useColorModeValue } from '@chakra-ui/react';
 
 interface ItemProps {
   number: number;
@@ -15,6 +15,7 @@ export function Item({
         size='sm'
         fontSize='xs'
         width='4'
+        color='white'
         colorScheme='pink'
         disabled
         _disabled={{
@@ -31,7 +32,8 @@ export function Item({
       size='sm'
       fontSize='xs'
       width='4'
-      bgColor='gray.700'
+      color={useColorModeValue('whiteAlpha','gray.300')}
+      bgColor={useColorModeValue('gray.700', 'gray.100')}
       _hover={{
         bg: 'gray.500'
       }}
