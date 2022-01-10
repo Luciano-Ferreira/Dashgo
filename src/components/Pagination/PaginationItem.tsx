@@ -5,7 +5,7 @@ interface ItemProps {
   isCurrent?: boolean;
 }
 
-export function Item({ 
+export function PaginationItem({ 
   number, 
   isCurrent = false 
 }: ItemProps) {

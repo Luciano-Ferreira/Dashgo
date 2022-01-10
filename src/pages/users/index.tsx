@@ -69,8 +69,8 @@ export default function UserList() {
                       <Th px='6' color='gray.300' width='8'>
                         <Checkbox borderColor={useColorModeValue('whiteAlpha', 'gray.300')} colorScheme='pink' />
                       </Th>
-                      <Th>Usuário</Th>
-                      {isWideVersion && <Th>Data de cadastro</Th>}
+                      <Th>User</Th>
+                      {isWideVersion && <Th>Date of register</Th>}
                       <Th width='8'></Th>
                     </Tr>
                   </Thead>
@@ -110,7 +110,11 @@ export default function UserList() {
                     }
                   </Tbody>
                 </Table>
-                <Pagination />
+                <Pagination
+                  totalNumberRegisters={200}
+                  currentPage={5}
+                  onPageChange={() => {}}
+                />
               </>
             )
           }
