@@ -62,7 +62,9 @@ export function Pagination({
         {currentPage > (1 + siblingsCount) && (
           <>
             <PaginationItem number={1} />
-            { currentPage > (2 + siblingsCount) && <Text>...</Text> }
+            { currentPage > (2 + siblingsCount) && 
+            <Text color='gray.300' width='8' textAlign='center'>...</Text>
+             }
           </>
         )}
 
@@ -77,7 +79,9 @@ export function Pagination({
 
         {(currentPage + siblingsCount) < lastPage && (
           <>
-            {(currentPage + 1 + siblingsCount) < lastPage && <Text>...</Text>}
+            {(currentPage + 1 + siblingsCount) < lastPage && 
+            <Text color='gray.300' width='8' textAlign='center'>...</Text>
+            }
             <PaginationItem number={lastPage} />
           </>
         )}
