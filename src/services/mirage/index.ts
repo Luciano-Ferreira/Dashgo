@@ -15,10 +15,10 @@ export function makeServer() {
 
     factories: {
       user: Factory.extend({
-        name(i) {
-          return `User ${i + 1}`
+        name() {
+          return faker.name.firstName()
         },
-        email(i) {
+        email() {
           return faker.internet.email().toLowerCase();
         },
         createdAt() {
@@ -53,6 +53,7 @@ export function makeServer() {
         )
       });
 
+      this.get('/users/:id');
 
       this.post('/users');
 
