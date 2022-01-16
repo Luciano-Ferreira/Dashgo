@@ -1,15 +1,17 @@
 import NextLink from 'next/link';
+import { GetServerSideProps } from 'next';
+import { useState } from 'react';
 
 import { useColorModeValue, Box, Flex, Text, Heading, Button, Icon, Table, Thead, Tr, Th, Td, Tbody, Checkbox, useBreakpointValue, Spinner, Link } from '@chakra-ui/react';
-import { Pagination } from '../../components/Pagination';
 import { RiAddLine, RiPencilLine } from 'react-icons/ri';
+
+import { Pagination } from '../../components/Pagination';
 import { Header } from '../../components/Header';
 import { Sidebar } from '../../components/Sidebar';
 import { queryClient } from '../../services/queryClient';
 
 
-import { useUsers } from '../../services/hooks/useUsers';
-import { useState } from 'react';
+import { useUsers, getUsers } from '../../services/hooks/useUsers';
 import { api } from '../../services/api';
 
 export default function UserList() {
