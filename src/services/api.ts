@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3000/api'
+  baseURL: 'https://dashgo-ap7rbwsiy-luciano-ferreira.vercel.app/api'
 })
