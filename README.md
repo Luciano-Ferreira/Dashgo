@@ -14,7 +14,7 @@
 - Mirage
 - Apex charts
 - react hook form
-
+- yup
 
 ## :memo: License
 This project is under the MIT license. See the [LICENSE](https://github.com/Luciano-Ferreira/Dashgo/blob/main/LICENSE) for more information.
